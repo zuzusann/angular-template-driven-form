@@ -13,9 +13,5 @@ export class AppComponent {
 
   onFormSubmitted(){
     console.log(this.form);
-    console.log(this.form.controls['firstname'].value);
-    console.log(this.form.value.lastname);
-    console.log(this.form.value.email);
-    console.log(this.form.value.country);
   }
 }

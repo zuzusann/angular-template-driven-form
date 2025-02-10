@@ -4,21 +4,30 @@
   <form class="form" (ngSubmit)="onFormSubmitted()" #registrationForm="ngForm">
     <div class="column">
       <div class="input-box">
-        <input type="text" placeholder="First Name" name="firstname" ngModel/>
+        <input type="text" placeholder="First Name" name="firstname" ngModel required #fname="ngModel"/>
+        <div>
+          <small *ngIf="fname.invalid && fname.touched">*First Name is a Required Field</small>
+        </div>
       </div> 
 
       <div class="input-box">
-        <input type="text" placeholder="Last Name" name="lastname" ngModel/>
+        <input type="text" placeholder="Last Name" name="lastname" ngModel required #lname="ngModel"/>
+        <div>
+          <small *ngIf="lname.invalid && lname.touched">*Last Name is a Required Field</small>
+        </div>
       </div>
     </div>    
 
     <div class="input-box">
-      <input type="text" placeholder="Email" name="email" ngModel/>
+      <input type="text" placeholder="Email" name="email" ngModel required email #email="ngModel"/>
+      <div>
+        <small *ngIf="email.invalid && email.touched">*Enter email is not valid</small>
+      </div> 
     </div>
 
     <div class="column">
       <div class="input-box">
-        <input type="number" placeholder="Phone Number" name="phone" ngModel/>
+        <input type="number" placeholder="Phone Number" name="phone" ngModel>
       </div>
       <div class="input-box">
         <input type="date" placeholder="Date of Birth" name="dob" ngModel/>
@@ -50,9 +59,9 @@
       </div>
     </div>
 
-    <div class="input-box address">
+    <div class="input-box address" ngModelGroup="address" #addr="ngModelGroup">
       <label>Address</label>
-      <input type="text" placeholder="Street address" name="street1" ngModel/>
+      <input type="text" placeholder="Street address" name="street1" ngModel required/>
       <input type="text" placeholder="Street address line 2" name="street2" ngModel/>
       <div class="column">
         <div class="select-box">
@@ -64,13 +73,16 @@
             <option>Nepal</option>
           </select>
         </div>
-        <input type="text" placeholder="City" name="city" ngModel/>
+        <input type="text" placeholder="City" name="city" ngModel required/>
       </div>
       <div class="column">
         <input type="text" placeholder="Region" name="region" ngModel/>
-        <input type="number" placeholder="Postal code" name="postal" ngModel/>
+        <input type="number" placeholder="Postal code" name="postal" ngModel required/>
       </div>
     </div>
-    <input type="submit" value="Submit" class="submit-btn"> 
+    <div>
+      <small *ngIf="addr.invalid && addr.touched">*Some of the address fields does not valid</small>
+    </div>
+    <input type="submit" value="Submit" class="submit-btn" [disabled]="!registrationForm.valid"> 
   </form>
 </section>
