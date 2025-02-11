@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +8,4 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   title = 'template-driven-form';
 
-  @ViewChild('registrationForm') form: NgForm;
-
-  onFormSubmitted(){
-    console.log(this.form);
-  }
 }

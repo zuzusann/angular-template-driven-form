@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": "1bd8",
+      "firstName": "Zu  Zu San",
+      "lastName": "San",
+      "dob": "2020-04-11",
+      "phone": 9428343702,
+      "emailAddress": "zuzusan65@gmailcom",
+      "street1": "",
+      "street2": "",
+      "country": "",
+      "city": "",
+      "region": "",
+      "postal": "",
+      "isAgreed": false,
+      "password": "Mary4246346",
+      "username": "mary",
+      "hobbies": [
+        "Reading",
+        "Writing"
+      ]
+    },
+    {
+      "id": "bb16",
+      "firstName": "Zu  Zu San",
+      "lastName": "San",
+      "dob": "2025-02-11",
+      "phone": 9428343702,
+      "emailAddress": "zuzusan65@gmailcom",
+      "street1": "apple",
+      "street2": "orange",
+      "country": "country",
+      "city": "Yangon",
+      "region": "Yangon",
+      "postal": 123,
+      "isAgreed": false,
+      "password": "12345",
+      "username": "mifos",
+      "hobbies": [
+        "Reading",
+        "Writing"
+      ]
+    },
+    {
+      "id": "4a10",
+      "firstName": "Mg",
+      "lastName": "Mg",
+      "dob": "2025-02-05",
+      "phone": "",
+      "emailAddress": "mg@gmailcom",
+      "gender": "male",
+      "street1": "lar",
+      "street2": "",
+      "country": "country",
+      "city": "Yangon",
+      "region": "Yangon",
+      "postal": 123,
+      "isAgreed": false,
+      "password": "123455789",
+      "username": "mgmg",
+      "hobbies": [
+        "Reading",
+        "Writing"
+      ]
+    }
+  ]
+}
