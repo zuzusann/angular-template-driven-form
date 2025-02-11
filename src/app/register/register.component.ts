@@ -58,7 +58,7 @@ export class RegisterComponent{
     onFormSubmitted(form: NgForm){
       if(form.valid){
            this.userServie.addUser(this.user).subscribe(() => { form.reset()});   
-           alert('Ya p');
+           alert('Your request is Success');
         }
       else{
           alert('Form is invalid');

@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +10,21 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent{
 
+  constructor(private userService: UserService, private router: Router) { }
+
   onLoginFormSubmitted(form: NgForm) {
     if (form.valid) {
-      // Perform login logic here, such as sending data to an API
-      console.log('Login form submitted:', form.value);
+      this.userService.getUsers().subscribe(users => {
+        const validUser = users.find(
+          (user: any) => user.username === form.value.username && user.password === form.value.password
+        );
+        if (validUser) {
+          this.router.navigate(['/home']);
+          alert('Login successful:');
+        } else {
+          alert('Invalid credentials');
+        }
+      });
     } else {
       console.log('Form is invalid');
     }

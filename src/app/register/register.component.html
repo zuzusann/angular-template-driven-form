@@ -103,5 +103,8 @@
             <small *ngIf="addr.invalid && addr.touched">*Some of the address fields does not valid</small>
         </div>
         <input type="submit" value="Submit" class="submit-btn" [disabled]="!registrationForm.valid">
+        <div class="register-link">
+            <p>Already A Member? <a routerLink="/login">Login here</a></p>
+          </div>
     </form>
 </section>
